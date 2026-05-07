@@ -58,10 +58,9 @@
       .then(cfg => {
         if (!cfg.destination) throw new Error('No destination set in config.json');
         const url = cfg.destination;
-        document.getElementById('subtext').textContent = url;
         document.getElementById('manualLink').href = url;
         document.getElementById('manualLink').style.display = 'inline';
-        setTimeout(() => { window.location.replace(url); }, 800);
+        window.location.replace(url);
       })
       .catch(err => {
         document.getElementById('spinner').style.display = 'none';
